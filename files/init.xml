@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initinfo>
+	<timeinterval type="update" value="5000"/>
+	<timeinterval type="check" value="1000"/>
+</initinfo>

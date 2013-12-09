@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Student Activity Detector
+Bundle-SymbolicName: com.lkl.ActivityDetector;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.lkl.activitydetector.Activator
+Bundle-Vendor: LKL - Sokratis Karkalas
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.console;bundle-version="3.5.100"
+Bundle-ClassPath: lib/asm-3.1.jar,
+ lib/jackson-core-asl-1.9.2.jar,
+ lib/jackson-jaxrs-1.9.2.jar,
+ lib/jackson-mapper-asl-1.9.2.jar,
+ lib/jackson-xc-1.9.2.jar,
+ lib/jersey-client-1.17.jar,
+ lib/jersey-core-1.17.jar,
+ lib/jersey-json-1.17.jar,
+ lib/jersey-server-1.17.jar,
+ lib/jersey-servlet-1.17.jar,
+ lib/jettison-1.1.jar,
+ lib/jsr311-api-1.1.1.jar,
+ .
