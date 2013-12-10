@@ -42,7 +42,7 @@ import org.xml.sax.InputSource;
 public class Activator extends AbstractUIPlugin implements IStartup {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "com.test.events"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "com.lkl.ActivityDetector"; //$NON-NLS-1$
 
 	// The shared instance
 	private static Activator plugin;
@@ -63,7 +63,7 @@ public class Activator extends AbstractUIPlugin implements IStartup {
 	private static MessageConsoleStream stream = null;
 
 	//private static final String URL = "http://localhost:8080/dataUpdateService";
-	private static final String URL = "http://talos.dcs.bbk.ac.uk:8888/dataUpdateService";
+	private static final String URL = "http://talos.dcs.bbk.ac.uk:8888/com.lkl.eclipsedata";
 	
 	/**
 	 * The constructor
@@ -151,7 +151,7 @@ public class Activator extends AbstractUIPlugin implements IStartup {
 	
 	private void updateDatabase(String userData)
 	{
-		Job updater=new UpdaterThread("UpdateThread",userData,stream.getConsole().newMessageStream());
+		Job updater=new UpdaterThread("UpdateThread",userData,stream==null?null:stream.getConsole().newMessageStream());
 		updater.schedule();
 		/*
 		ClientConfig configuration=new DefaultClientConfig();
@@ -345,6 +345,8 @@ public class Activator extends AbstractUIPlugin implements IStartup {
 	 */
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
+		stream.close();
+		stream = null;
 		
 		Timestamp newTimestamp = getTimestamp();		
 
